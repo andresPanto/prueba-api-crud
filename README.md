@@ -34,11 +34,11 @@ $ npm run start:dev
  - [Nest](https://github.com/nestjs/nest) 
  - [TypeScript](https://www.typescriptlang.org/) 
  - [TypeORM](https://typeorm.io/)
- - [SQLite] (https://www.sqlite.org/index.html)
- - [Passport] (https://www.passportjs.org/)
- - [JWT] (https://jwt.io/)
- - [Winston] (https://www.npmjs.com/package/winston)
- - [Swagger] (https://swagger.io/)
+ - [SQLite](https://www.sqlite.org/index.html)
+ - [Passport](https://www.passportjs.org/)
+ - [JWT](https://jwt.io/)
+ - [Winston](https://www.npmjs.com/package/winston)
+ - [Swagger](https://swagger.io/)
 
 ## Usage
 
