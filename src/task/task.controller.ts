@@ -8,7 +8,9 @@ import {
   Patch,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { ApiOperation, ApiParam, ApiResponse } from '@nestjs/swagger';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
@@ -58,6 +60,7 @@ export class TaskController {
     required: true,
   })
   @ApiResponse({ type: Task })
+  @UseGuards(AuthGuard('jwt'))
   @Delete(':id')
   async deleteTaskById(@Param('id', ParseIntPipe) id: number): Promise<Task> {
     return this._taskService.deleteTask(id);
@@ -73,6 +76,7 @@ export class TaskController {
     required: true,
   })
   @ApiResponse({ type: Task })
+  @UseGuards(AuthGuard('jwt'))
   @Post()
   async createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
     return this._taskService.createTask(createTaskDto);
@@ -90,6 +94,7 @@ export class TaskController {
     required: true,
   })
   @ApiResponse({ type: Task })
+  @UseGuards(AuthGuard('jwt'))
   @Patch(':id/status')
   async updateStatus(@Param('id', ParseIntPipe) id: number): Promise<Task> {
     return this._taskService.updateStatus(id);
